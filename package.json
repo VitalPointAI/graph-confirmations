@@ -1,7 +1,8 @@
 {
-  "name": "near-receipts",
+  "name": "subgraph-test",
   "version": "0.1.0",
-  "repository": "https://github.com/VitalPointAI/graph-near-receipts.git",
+  "author": "Braeden Barton",
+  "repository": "https://github.com/Braeden0415/vitalpointai-subgraph-test.git",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen",

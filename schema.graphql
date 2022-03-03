@@ -1,4 +1,4 @@
-type Log @entity {
+type Init @entity {
   id: ID!
   blockTime: BigInt
   blockHeight: BigInt
@@ -15,7 +15,52 @@ type Log @entity {
   log: String
   # above here are standard field properties, add custom ones below
   accountId: String
-  did: String
-  registered: BigInt
-  owner: String
+  adminId: String
+  adminSet: BigInt
+
+}
+
+type SetContractToFund @entity {
+  id: ID!
+  blockTime: BigInt
+  blockHeight: BigInt
+  blockHash: String
+  predecessorId: String
+  receiverId: String
+  signerId: String
+  signerPublicKey: String
+  gasBurned: BigInt
+  tokensBurned: BigInt
+  outcomeId: String
+  executorId: String
+  outcomeBlockHash: String
+  log: String
+  # above here are standard field properties, add custom ones below
+  contractPublicKey: String
+  allowance: String
+  contract: String
+  methods: String
+  time: BigInt
+  admin: String
+}
+
+type TransferAdmin @entity {
+  id: ID!
+  blockTime: BigInt
+  blockHeight: BigInt
+  blockHash: String
+  predecessorId: String
+  receiverId: String
+  signerId: String
+  signerPublicKey: String
+  gasBurned: BigInt
+  tokensBurned: BigInt
+  outcomeId: String
+  executorId: String
+  outcomeBlockHash: String
+  log: String
+  # above here are standard field properties, add custom ones below
+  transferredFrom: String
+  transferred: BigInt
+  transferredTo: String
 }
