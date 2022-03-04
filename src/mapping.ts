@@ -163,7 +163,7 @@ function handleAction(
                 logs.contractPublicKey = data.entries[i].value.toString()
                 break
               case key == 'allowance':
-                logs.allowance = data.entries[i].value.toBigInt()
+                logs.allowance = data.entries[i].value.toString()
                 break
               case key == 'time':
                 logs.time = data.entries[i].value.toBigInt()
@@ -172,7 +172,10 @@ function handleAction(
                 logs.contract = data.entries[i].value.toString()
                 break
               case key == 'methods':
-                logs.methods = data.entries[i].value.toString()
+                let methodsArray = data.entries[i].value.toArray()
+                for(let i = 0; i < methodsArray.length; i ++) {
+                  logs.methods.push(methodsArray[i].toString())
+                }
                 break
               case key == 'admin':
                 logs.admin = data.entries[i].value.toString()

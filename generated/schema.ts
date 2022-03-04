@@ -298,6 +298,23 @@ export class Init extends Entity {
     }
   }
 
+  get event(): string | null {
+    let value = this.get("event");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set event(value: string | null) {
+    if (!value) {
+      this.unset("event");
+    } else {
+      this.set("event", Value.fromString(<string>value));
+    }
+  }
+
   get accountId(): string | null {
     let value = this.get("accountId");
     if (!value || value.kind == ValueKind.NULL) {
@@ -348,29 +365,14 @@ export class Init extends Entity {
       this.set("adminSet", Value.fromBigInt(<BigInt>value));
     }
   }
-
-  get event(): string | null {
-    let value = this.get("event");
-    if (!value || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set event(value: string | null) {
-    if (!value) {
-      this.unset("event");
-    } else {
-      this.set("event", Value.fromString(<string>value));
-    }
-  }
 }
 
 export class SetContractToFund extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
+
+    this.set("methods", Value.fromStringArray(new Array(0)));
   }
 
   save(): void {
@@ -690,20 +692,20 @@ export class SetContractToFund extends Entity {
     }
   }
 
-  get allowance(): BigInt | null {
+  get allowance(): string | null {
     let value = this.get("allowance");
     if (!value || value.kind == ValueKind.NULL) {
       return null;
     } else {
-      return value.toBigInt();
+      return value.toString();
     }
   }
 
-  set allowance(value: BigInt | null) {
+  set allowance(value: string | null) {
     if (!value) {
       this.unset("allowance");
     } else {
-      this.set("allowance", Value.fromBigInt(<BigInt>value));
+      this.set("allowance", Value.fromString(<string>value));
     }
   }
 
@@ -724,21 +726,13 @@ export class SetContractToFund extends Entity {
     }
   }
 
-  get methods(): string | null {
+  get methods(): Array<string> {
     let value = this.get("methods");
-    if (!value || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
+    return value!.toStringArray();
   }
 
-  set methods(value: string | null) {
-    if (!value) {
-      this.unset("methods");
-    } else {
-      this.set("methods", Value.fromString(<string>value));
-    }
+  set methods(value: Array<string>) {
+    this.set("methods", Value.fromStringArray(value));
   }
 
   get time(): BigInt | null {
