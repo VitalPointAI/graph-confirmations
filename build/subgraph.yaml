@@ -1,21 +1,22 @@
 specVersion: 0.0.4
 description: DID registry
-repository: https://github.com/VitalPointAI/near-subgraph-template.git
+repository: https://github.com/VitalPointAI/graph-confirmations/
 schema:
   file: schema.graphql
 dataSources:
   - kind: near
     name: receipts
-    network: near-mainnet
+    network: near-testnet
     source:
-      account: did.near
-      startBlock: 54167320
+      account: funding.vitalpointai.testnet
+      startBlock: 81319681
     mapping:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: receipts/receipts.wasm
       entities:
-        - Account
-        - Log
+        - SetContractToFund
+        - Init
+        - TransferAdmin
       receiptHandlers:
         - handler: handleReceipt

@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 description: DID registry # the name of the subgraph
-repository: https://github.com/VitalPointAI/near-subgraph-template.git # repo where subgraph project is stored
+repository: https://github.com/VitalPointAI/graph-confirmations/ # repo where subgraph project is stored
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: receipts # could also be blocks
     network: near-testnet # can choose near-mainnet or near-testnet
     source:
-      account: did.near # contract account you want to pull data from
+      account: funding.vitalpointai.testnet # contract account you want to pull data from
       startBlock: 81319681 # starting block on near-mainnet for indexing
     mapping:
       apiVersion: 0.0.5
