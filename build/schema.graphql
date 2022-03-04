@@ -46,7 +46,7 @@ type SetContractToFund @entity {
   contractPublicKey: String
   allowance: String
   contract: String
-  methods: [String!]!  #@derivedFrom(field: "transferredFrom")
+  methods: [String!]! 
   time: BigInt
   admin: String
 }

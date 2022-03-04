@@ -173,8 +173,12 @@ function handleAction(
                 break
               case key == 'methods':
                 let methodsArray = data.entries[i].value.toArray()
-                for(let i = 0; i < methodsArray.length; i ++) {
-                  logs.methods.push(methodsArray[i].toString())
+                if (methodsArray.length > 0) {
+                  for(let i = 0; i < methodsArray.length; i ++) {
+                    logs.methods.push(methodsArray[i].toString())
+                  }
+                } else {
+                  logs.methods.push(methodsArray.toString())
                 }
                 break
               case key == 'admin':
