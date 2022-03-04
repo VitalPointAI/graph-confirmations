@@ -1,18 +1,74 @@
-type Account @entity {
+type Init @entity {
   id: ID!
-  signerId: String!
-  log: [Log!]!
-}
-
-type Log @entity {
-  id: ID!
-  standard: String!
-  version: String!
-  event: String!
+  blockTime: BigInt
+  blockHeight: BigInt
+  blockHash: String
+  predecessorId: String
+  receiverId: String
+  signerId: String
+  signerPublicKey: String
+  gasBurned: BigInt
+  tokensBurned: BigInt
+  outcomeId: String
+  executorId: String
+  outcomeBlockHash: String
+  log: String
+  standard: String
+  version: String
+  event: String
+  # above here are standard field properties, add custom ones below
   adminId: String
   adminSet: BigInt
   accountId: String
-  did: String
-  registered: BigInt
-  owner: String
+}
+
+type SetContractToFund @entity {
+   id: ID!
+  blockTime: BigInt
+  blockHeight: BigInt
+  blockHash: String
+  predecessorId: String
+  receiverId: String
+  signerId: String
+  signerPublicKey: String
+  gasBurned: BigInt
+  tokensBurned: BigInt
+  outcomeId: String
+  executorId: String
+  outcomeBlockHash: String
+  log: String
+  standard: String
+  version: String
+  event: String
+  # above here are standard field properties, add custom ones below
+  contractPublicKey: String
+  allowance: String
+  contract: String
+  methods: [String!]!
+  time: BigInt
+  admin: String
+}
+
+type TransferAdmin @entity {
+   id: ID!
+  blockTime: BigInt
+  blockHeight: BigInt
+  blockHash: String
+  predecessorId: String
+  receiverId: String
+  signerId: String
+  signerPublicKey: String
+  gasBurned: BigInt
+  tokensBurned: BigInt
+  outcomeId: String
+  executorId: String
+  outcomeBlockHash: String
+  log: String
+  standard: String
+  version: String
+  event: String
+  # above here are standard field properties, add custom ones below
+  transferredFrom: String
+  transferred: BigInt
+  transferredTo: String
 }
