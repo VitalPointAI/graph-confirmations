@@ -264,6 +264,40 @@ export class Init extends Entity {
     }
   }
 
+  get standard(): string | null {
+    let value = this.get("standard");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set standard(value: string | null) {
+    if (!value) {
+      this.unset("standard");
+    } else {
+      this.set("standard", Value.fromString(<string>value));
+    }
+  }
+
+  get version(): string | null {
+    let value = this.get("version");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set version(value: string | null) {
+    if (!value) {
+      this.unset("version");
+    } else {
+      this.set("version", Value.fromString(<string>value));
+    }
+  }
+
   get accountId(): string | null {
     let value = this.get("accountId");
     if (!value || value.kind == ValueKind.NULL) {
@@ -312,6 +346,23 @@ export class Init extends Entity {
       this.unset("adminSet");
     } else {
       this.set("adminSet", Value.fromBigInt(<BigInt>value));
+    }
+  }
+
+  get event(): string | null {
+    let value = this.get("event");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set event(value: string | null) {
+    if (!value) {
+      this.unset("event");
+    } else {
+      this.set("event", Value.fromString(<string>value));
     }
   }
 }
@@ -568,6 +619,57 @@ export class SetContractToFund extends Entity {
       this.unset("log");
     } else {
       this.set("log", Value.fromString(<string>value));
+    }
+  }
+
+  get standard(): string | null {
+    let value = this.get("standard");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set standard(value: string | null) {
+    if (!value) {
+      this.unset("standard");
+    } else {
+      this.set("standard", Value.fromString(<string>value));
+    }
+  }
+
+  get version(): string | null {
+    let value = this.get("version");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set version(value: string | null) {
+    if (!value) {
+      this.unset("version");
+    } else {
+      this.set("version", Value.fromString(<string>value));
+    }
+  }
+
+  get event(): string | null {
+    let value = this.get("event");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set event(value: string | null) {
+    if (!value) {
+      this.unset("event");
+    } else {
+      this.set("event", Value.fromString(<string>value));
     }
   }
 
@@ -924,6 +1026,57 @@ export class TransferAdmin extends Entity {
       this.unset("log");
     } else {
       this.set("log", Value.fromString(<string>value));
+    }
+  }
+
+  get standard(): string | null {
+    let value = this.get("standard");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set standard(value: string | null) {
+    if (!value) {
+      this.unset("standard");
+    } else {
+      this.set("standard", Value.fromString(<string>value));
+    }
+  }
+
+  get version(): string | null {
+    let value = this.get("version");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set version(value: string | null) {
+    if (!value) {
+      this.unset("version");
+    } else {
+      this.set("version", Value.fromString(<string>value));
+    }
+  }
+
+  get event(): string | null {
+    let value = this.get("event");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set event(value: string | null) {
+    if (!value) {
+      this.unset("event");
+    } else {
+      this.set("event", Value.fromString(<string>value));
     }
   }
 

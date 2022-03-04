@@ -16,10 +16,11 @@ type Init @entity {
   # above here are standard field properties, add custom ones below
   standard: String
   version: String
-  event: String
+  
   accountId: String
   adminId: String
   adminSet: BigInt
+  event: String
 
 }
 
