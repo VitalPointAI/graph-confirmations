@@ -1,5 +1,5 @@
 specVersion: 0.0.4
-description: DID registry # the name of the subgraph
+description: SubGraph VitalPoint # the name of the subgraph
 repository: https://github.com/Braeden0415/vitalpointai-subgraph-test.git # repo where subgraph project is stored
 schema:
   file: ./schema.graphql
