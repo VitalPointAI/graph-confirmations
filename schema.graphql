@@ -46,7 +46,11 @@ type SetContractToFund @entity {
   contractPublicKey: String
   allowance: String
   contract: String
+<<<<<<< HEAD
   methods: [String!]! 
+=======
+  methods: [String!]!
+>>>>>>> d7f4d36930004b9de3559ef59d30d7935896acf4
   time: BigInt
   admin: String
 }
