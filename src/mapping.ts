@@ -163,7 +163,7 @@ function handleAction(
                 logs.contractPublicKey = data.entries[i].value.toString()
                 break
               case key == 'allowance':
-                logs.allowance = data.entries[i].value.toString()
+                logs.allowance = data.entries[i].value.toBigInt()
                 break
               case key == 'time':
                 logs.time = data.entries[i].value.toBigInt()

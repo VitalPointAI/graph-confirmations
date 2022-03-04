@@ -690,20 +690,20 @@ export class SetContractToFund extends Entity {
     }
   }
 
-  get allowance(): string | null {
+  get allowance(): BigInt | null {
     let value = this.get("allowance");
     if (!value || value.kind == ValueKind.NULL) {
       return null;
     } else {
-      return value.toString();
+      return value.toBigInt();
     }
   }
 
-  set allowance(value: string | null) {
+  set allowance(value: BigInt | null) {
     if (!value) {
       this.unset("allowance");
     } else {
-      this.set("allowance", Value.fromString(<string>value));
+      this.set("allowance", Value.fromBigInt(<BigInt>value));
     }
   }
 

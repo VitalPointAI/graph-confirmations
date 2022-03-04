@@ -44,7 +44,7 @@ type SetContractToFund @entity {
   version: String
   event: String
   contractPublicKey: String
-  allowance: String
+  allowance: BigInt
   contract: String
   methods: String
   time: BigInt
