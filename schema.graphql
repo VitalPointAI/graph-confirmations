@@ -14,6 +14,9 @@ type Init @entity {
   outcomeBlockHash: String
   log: String
   # above here are standard field properties, add custom ones below
+  standard: String
+  version: String
+  event: String
   accountId: String
   adminId: String
   adminSet: BigInt
@@ -36,6 +39,9 @@ type SetContractToFund @entity {
   outcomeBlockHash: String
   log: String
   # above here are standard field properties, add custom ones below
+  standard: String
+  version: String
+  event: String
   contractPublicKey: String
   allowance: String
   contract: String
@@ -60,6 +66,9 @@ type TransferAdmin @entity {
   outcomeBlockHash: String
   log: String
   # above here are standard field properties, add custom ones below
+  standard: String
+  version: String
+  event: String
   transferredFrom: String
   transferred: BigInt
   transferredTo: String
