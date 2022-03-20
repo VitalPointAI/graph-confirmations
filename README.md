@@ -8,3 +8,4 @@ Customize the following files:
 - src/mappings.ts
 
 We've commented the three files to indicate what likely needs changing.
+https://thegraph.com/hosted-service/subgraph/kdallow/practice1
